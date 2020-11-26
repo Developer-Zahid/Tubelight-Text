@@ -1,0 +1,68 @@
+/* Google Fonts Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* CSS Variables */
+:root{
+    --text-clr: #021922;
+    --shadow-clr: #03bcf4;
+}
+::selection{
+    background: #222;
+    color: #fff;
+}
+/* Reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    @media (max-width:784px) {
+        font-size: 2vw;
+    }
+}
+/* Background/Container CSS */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 100vh;
+    background:#041d21 url(../images/bg.jpg) no-repeat;
+    background-position: right center;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    @media (max-width:784px) {
+        justify-content: center;
+    }
+}
+/* Main Tube Light txt CSS */
+.tube_light_txt{
+    font-size: 6em;
+    letter-spacing: 1.5px;
+    @media (min-width:785px) {
+        margin-right: 0.4em;
+    }
+    span{
+        color: var(--text-clr);
+        animation: tube-light 5s linear infinite;
+        &.next{
+            margin-left: 0.2em;
+        }
+    }
+}
+@keyframes tube-light{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+        color: var(--text-clr);
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+        color: #fff;
+        text-shadow:
+                    0 0 10px var(--shadow-clr),
+                    0 0 20px var(--shadow-clr),
+                    0 0 40px var(--shadow-clr),
+                    0 0 80px var(--shadow-clr),
+                    0 0 160px var(--shadow-clr),
+                    0 0 360px var(--shadow-clr);
+    }
+}
